@@ -20,7 +20,12 @@ h2{
     top: 100px;
     float: right;
     margin-right: 20px;
+    transition: all 250ms;
     
+}
+#eu:hover {
+    border-radius: 0%;
+    width: 210px;
 }
 
 
@@ -130,6 +135,7 @@ section p {
 }
 
 section div {
+    height: 30px;
     width: 50%;
     padding-left: 10%;
 }
