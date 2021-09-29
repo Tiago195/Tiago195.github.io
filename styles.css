@@ -1,0 +1,138 @@
+html{
+    color: #0c2a4b;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("fundo.png");
+    background-color: #cccccc;
+    border-radius: 25px;
+}
+h2{
+
+    font-family: DejaVu Sans Mono, monospace;
+    text-align: center;
+}
+
+#eu {
+    width: 180px;
+    border-radius: 50px;
+    border: solid 2px rgba(0, 0, 0, 0.445);
+    top: 100px;
+    float: right;
+    margin-right: 20px;
+    
+}
+
+
+#sla {
+    width: 600px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#hbo {
+    text-align: left;
+    background-color: rgba(90, 193, 233, 0.897);
+    width: 270px;
+    padding: 0 10px 10px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
+    
+}
+#hbo2 {
+    text-align: left;
+    background-color: rgba(90, 193, 233, 0.897);
+    width: 270px;
+    padding: 10px 10px 10px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
+}
+#td {
+    padding-right: 200px;
+}
+
+h4 {
+    text-align: center;
+}
+
+#fim {
+    background-color: rgba(90, 193, 233, 0.897);
+    width: 500px;
+    padding: 10px;
+    display: block;
+    margin: 0 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
+}
+
+
+
+#stg1 {
+    width: 280px;
+    height: 36px;
+    display: block;
+    margin:  3px 0;
+    padding: 4px;
+    background-color: rgba(66, 135, 167, 0.329);
+    border-radius: 10px;
+}
+
+#stg2 {
+    width: 280px;
+    height: 36px;
+    display: block;
+    margin:  10px 0 0;
+    padding: 4px;
+    background-color: rgba(66, 135, 167, 0.329);
+    border-radius: 10px;
+}
+
+.list{
+    line-height: 25px;
+    
+}
+
+footer{
+    font-style: italic;
+}
+
+#nerd {
+    color: #03045e
+}
+
+#min {
+    font-size: 22px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.452);
+}
+
+
+section#descriçao{
+    background-color: rgba(90, 193, 233, 0.897);
+    width: 600px;
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
+   
+}
+
+section p {
+    width: 60%;
+    display: inline-block;
+    font-family: DejaVu Sans Mono, monospace;
+    text-align: justify;
+    margin-top: 0;
+}
+
+section div {
+    width: 50%;
+    padding-left: 10%;
+}
+section h3 {
+    text-align: center;
+}
