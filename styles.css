@@ -136,3 +136,12 @@ section div {
 section h3 {
     text-align: center;
 }
+
+.links {
+    width: 25px;
+    transition: all 100ms;
+}
+
+.links:hover {
+    width: 30px;
+}
