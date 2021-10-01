@@ -5,7 +5,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("fundo.png");
     background-color: #cccccc;
-    border-radius: 25px;
 }
 h2{
 
@@ -15,17 +14,12 @@ h2{
 
 #eu {
     width: 180px;
-    border-radius: 50px;
+    border-radius: 10px;
     border: solid 2px rgba(0, 0, 0, 0.445);
     top: 100px;
     float: right;
     margin-right: 20px;
-    transition: all 250ms;
     
-}
-#eu:hover {
-    border-radius: 0%;
-    width: 210px;
 }
 
 
@@ -69,7 +63,7 @@ h4 {
     margin: 0 0 10px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 25px;
+    border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
 }
 
@@ -100,9 +94,7 @@ h4 {
     
 }
 
-footer{
-    font-style: italic;
-}
+
 
 #nerd {
     color: #03045e
@@ -151,3 +143,10 @@ section h3 {
 .links:hover {
     width: 30px;
 }
+
+td ul li:nth-child(odd) {
+    background-color: rgba(66, 135, 167, 0.329);
+    width: 70%;
+    border-radius: 5px;
+}
+
