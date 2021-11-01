@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;;
+}
+
+#inicial {
+  animation: gradient 10s ease infinite;
+  background: linear-gradient(-45deg,#d5cb93, #9DDBD5, #BEA7E2,#E7B1B6) no-repeat;
+  background-size: 300% 300%;
+  height: 100vh;
+}
+
+.header {
+  padding: 10px 100px;
+  font-size: 26px;
+  color: #111;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header nav li {
+  list-style-type: none;
+  display: inline;
+  letter-spacing: 1px;
+}
+
+.padraoNav {
+  display: flex;
+  align-items: center;
+}
+
+i {
+  transform: translateY(1px);
+}
+
+.padraoNav a{
+  text-decoration: none;
+  color: #111;
+}
+
+
+.filho1 a{
+  margin: 0 10px;
+  transition: 0.5s;
+}
+
+.filho1 li{
+  position: relative;
+}
+
+.filho1 li::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #111;
+  position: absolute;
+  right: 50%;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.filho1 li:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.filho2 a {
+  margin: 0 2px;
+  transition: 0.3s;
+} 
+
+.filho2 i:hover{
+  transform: scale(1.2);
+}
+
+#nome {
+  border: 2px solid #111;
+  padding: 30px;
+  width: fit-content;
+  font-size: 60px;
+  margin: 100px 0 0 100px;
+  color: #111;
+}
+
+#nome h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+@keyframes gradient{
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
