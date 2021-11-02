@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  overflow: hidden;
+}
+
+input {
+  display: none;
+}
+
+.header {
+  padding: 10px 100px;
+  font-size: 26px;
+  color: #111;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header nav li {
+  list-style-type: none;
+  display: inline;
+  letter-spacing: 1px;
+}
+
+.padraoNav {
+  display: flex;
+  align-items: center;
+}
+
+i {
+  transform: translateY(1px);
+}
+
+.padraoNav a{
+  text-decoration: none;
+  color: #111;
+}
+
+
+.filho1 a{
+  margin: 0 10px;
+  transition: 0.5s;
+}
+
+.filho1 li{
+  position: relative;
+}
+
+.filho1 li::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #111;
+  position: absolute;
+  right: 50%;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.filho1 li:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.filho2 a {
+  margin: 0 2px;
+  transition: 0.3s;
+} 
+
+.filho2 i:hover{
+  transform: scale(1.2);
+}
+
+#header-main {
+  width: fit-content;
+  font-size: 30px;
+  margin: 40px auto 0;
+  position: relative;
+  /* border-bottom: 2px solid; */
+}
+
+#header-main h1::after {
+  content: "";
+  width: 88px;
+  margin: 0 auto;
+  background-color: #111;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+}
+
+#header-main h1::before {
+  content: "";
+  width: 118px;
+  margin: 0 auto;
+  background-color: #111;
+  height: 3px;
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+}
+
+.caixa-pai {
+  width: 200%;
+  margin-top: 30px;
+}
+
+.caixa-filho {
+  height: 260px;
+  background-color: black;
+  color: white;
+}
+
+.caixa-filho h2 {
+  padding: 10px 20px 0;
+}
+
+.projetos {
+  display: inline-block;
+  width: 100%;
+  height: 180px;
+  background-color: white;
+}
+
+.list {
+  background:url(./imgs/list.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.pixel {
+  background: url(./imgs/pixel.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.memes {
+  background: url(./imgs/gerador-memes.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.color {
+  background: url(./imgs/color-gues.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.carta {
+  background: url(./imgs/carta-misteriosa.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.teste {
+  text-align: start;
+  display: inline-block;
+  margin-left: 3px;
+  width: 11%;
+  height: 100%;
+  background-color: blue;
+}
+
+label {
+  width: 50px;
+  height: 20px;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+.s1 {
+  transition: 0.8s;
+}
+
+#slide1:checked ~ .s1 {
+  margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+  margin-left: -45%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
