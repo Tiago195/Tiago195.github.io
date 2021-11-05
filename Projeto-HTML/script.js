@@ -1,3 +1,5 @@
+const label = document.querySelector('.control');
+
 document.querySelector('.list').addEventListener('click', () => {
   window.open('./projetos/list');
 });
@@ -16,4 +18,14 @@ document.querySelector('.color').addEventListener('click', () => {
 
 document.querySelector('.carta').addEventListener('click', () => {
   window.open('./projetos/carta');
+});
+
+
+label.addEventListener('click', (e) => {
+  if (e.target.tagName === 'LABEL') {
+    for (let i of label.children) {
+      i.style.backgroundColor = ''
+    }
+    e.target.style.backgroundColor = '#edeef0'
+  }
 });
