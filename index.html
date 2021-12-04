@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercicio de CSS</title>
-    <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
-    <h2> Tiago de Souza Meireles</h2>
-
-    <section id="descriçao">
-        <h3>Um pouco sobre o <span id="min">Tiago</span></h3>
-            <p id="p1" > 
-            <em>Estudando em Desenvolvimento Web na Trybe.</em>  <br>
-            Nasci no <strong>Rio de Janeiro</strong>, porem me mudei para <br> Região dos Lagos muito
-            cedo, e moro aqui ate hoje. <br> 
-            Comecei a estudar Desenvolvimento Web este ano (2021), espero que com ajuda da Trybe
-            eu consiga me tornar um otimo profissional. <strong>#GoTrybe</strong> <br>
-            
-            </p>
-        <img id="eu" src="lk.jpeg" alt="Foto de Tiago Meireles">
-        <div>
-            <a href="https://github.com/Tiago195" target="_blank"><img class="links" src="download.png" alt="GitHub" width="25x"></a>
-            <a href="https://www.linkedin.com/in/tiago-meireles-tsm/" target="_blank"><img class="links" src="download (1).png" alt="Linkedin" width="25x"></a>
-        </div>
-                
-    </section>
-      
-    <table id="sla">
-        <td id="hbo">
-            <h4 id="stg1"><strong>Habilidades que mais me orgulho</strong></h4>
-        <p ><ul class="list">
-            <li>Sou bom em jogos.</li>
-            <li>Adoro nadar.</li>
-            <li>Sou focado no q gosto.</li>
-        </ul></p>
-        </td>
-        <td id="hbo2">
-            <h4 id="stg2"><strong>Habilidades que quero me orgulhar um dia</strong></h4>
-        <p ><ul class="list">
-            <li>HTML</li>
-            <li>JavaScript</li>
-            <li>Java</li>
-            <li>CSS</li>
-        </ul></p>
-        </td>
-    </table>
-    <p id="fim">Não visito nenhum blog, mas gosto do canal <a id="nerd" href="https://www.youtube.com/channel/UChmOR1T5ZNnbRUba3lHRTOg/featured" target="_blank">República Coisa de Nerd </a></p>
-    <footer>&copy;TSM_sites</footer>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="root">
+      <section id="inicial">
+        <header class="header">
+          <nav>
+            <ul class="padraoNav filho1">
+              <li><a href="/" class="a-decoration">Inicio</a></li>
+              <li><a href="/Projeto-HTML">Projetos</a></li>
+              <li><a href="#">TeamFarofa</a></li>
+            </ul>
+            <ul class="padraoNav filho2">
+              <li>Contatos |</li>
+              <li>
+                <a href="https://github.com/Tiago195" target="_black"><i class="fab fa-github-square"></i></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/tiago-meireles-tsm/" target="_banck"><i class="fab fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <section id="nome">
+          <h2>Oi, eu sou o <s>goku</s></h2>
+          <h1>Tiago Meireles</h1>
+        </section>
+      </section>
+    </div>
+  </body>
 </html>

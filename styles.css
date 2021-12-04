@@ -1,153 +1,107 @@
-html{
-    color: #0c2a4b;
-}
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url("fundo.png");
-    background-color: #cccccc;
-    border-radius: 25px;
-}
-h2{
-
-    font-family: DejaVu Sans Mono, monospace;
-    text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-#eu {
-    width: 180px;
-    border-radius: 50px;
-    border: solid 2px rgba(0, 0, 0, 0.445);
-    top: 100px;
-    float: right;
-    margin-right: 20px;
-    transition: all 250ms;
-    
-}
-#eu:hover {
-    border-radius: 0%;
-    width: 210px;
+#inicial {
+  animation: gradient 10s ease infinite;
+  background: linear-gradient(-45deg,#d5cb93, #9DDBD5, #BEA7E2,#E7B1B6) no-repeat;
+  background-size: 300% 300%;
+  height: 100vh;
 }
 
-
-#sla {
-    width: 600px;
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-#hbo {
-    text-align: left;
-    background-color: rgba(90, 193, 233, 0.897);
-    width: 270px;
-    padding: 0 10px 10px;
-    border-radius: 25px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
-    
-}
-#hbo2 {
-    text-align: left;
-    background-color: rgba(90, 193, 233, 0.897);
-    width: 270px;
-    padding: 10px 10px 10px;
-    border-radius: 25px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
-}
-#td {
-    padding-right: 200px;
+.header {
+  padding: 10px 100px;
+  font-size: 26px;
+  color: #111;
 }
 
-h4 {
-    text-align: center;
+.header nav {
+  display: flex;
+  justify-content: space-between;
 }
 
-#fim {
-    background-color: rgba(90, 193, 233, 0.897);
-    width: 500px;
-    padding: 10px;
-    display: block;
-    margin: 0 0 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 25px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
+.header nav li {
+  list-style-type: none;
+  display: inline;
+  letter-spacing: 1px;
+}
+
+.padraoNav {
+  display: flex;
+  align-items: center;
+}
+
+i {
+  transform: translateY(1px);
+}
+
+.padraoNav a{
+  text-decoration: none;
+  color: #111;
 }
 
 
-
-#stg1 {
-    width: 280px;
-    height: 36px;
-    display: block;
-    margin:  3px 0;
-    padding: 4px;
-    background-color: rgba(66, 135, 167, 0.329);
-    border-radius: 10px;
+.filho1 a{
+  margin: 0 10px;
+  transition: 0.5s;
 }
 
-#stg2 {
-    width: 280px;
-    height: 36px;
-    display: block;
-    margin:  10px 0 0;
-    padding: 4px;
-    background-color: rgba(66, 135, 167, 0.329);
-    border-radius: 10px;
+.filho1 li{
+  position: relative;
 }
 
-.list{
-    line-height: 25px;
-    
+.filho1 li::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #111;
+  position: absolute;
+  right: 50%;
+  bottom: -5px;
+  transition: 0.3s;
 }
 
-footer{
-    font-style: italic;
+.filho1 li:hover::after {
+  width: 100%;
+  right: 0;
 }
 
-#nerd {
-    color: #03045e
+.filho2 a {
+  margin: 0 2px;
+  transition: 0.3s;
+} 
+
+.filho2 i:hover{
+  transform: scale(1.2);
 }
 
-#min {
-    font-size: 22px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.452);
+#nome {
+  border: 2px solid #111;
+  padding: 30px;
+  width: fit-content;
+  font-size: 60px;
+  margin: 100px 0 0 100px;
+  color: #111;
 }
 
-
-section#descriçao{
-    background-color: rgba(90, 193, 233, 0.897);
-    width: 600px;
-    padding: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 25px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.459);
-   
+#nome h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
-section p {
-    width: 60%;
-    display: inline-block;
-    font-family: DejaVu Sans Mono, monospace;
-    text-align: justify;
-    margin-top: 0;
-}
+@keyframes gradient{
+  0% {
+    background-position: 0 50%;
+  }
 
-section div {
-    height: 30px;
-    width: 50%;
-    padding-left: 10%;
-}
-section h3 {
-    text-align: center;
-}
+  50% {
+    background-position: 100% 50%;
+  }
 
-.links {
-    width: 25px;
-    transition: all 100ms;
-}
-
-.links:hover {
-    width: 30px;
+  100% {
+    background-position: 0 50%;
+  }
 }

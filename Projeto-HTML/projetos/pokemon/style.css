@@ -1,0 +1,234 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  width: 90vw;
+  padding: 10px 0 0 35px;
+}
+
+/* section pai // papi */
+.papi{
+  /* background-color: blueviolet; */
+  height: 80px;
+}
+/* input */
+
+.input-container {
+  width: 90vw;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.input {
+  display: flex;
+  gap: 10px;
+}
+
+#btn {
+  padding: 10px 20px;
+}
+
+.input-container input{
+  width: 40vw;
+  height: 40px;
+}
+/* area dos pokemons */
+
+.todos-pokemons{
+  margin-top: 50px;
+  margin: 50px auto 0;
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+
+.pokemon {
+  width: 150px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* position: relative; */
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.pokemon img {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+}
+
+.id-pokemon {
+  margin-left: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+}
+
+.name-pokemon {
+  display: block;
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  margin-top: -15px;
+  padding: 6px 0;
+}
+
+.paiTipagem{
+  display: flex;
+}
+
+.icon {
+  border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin:auto;
+}
+
+.icon img {
+  height: 60%;
+  width: 60%;
+  margin: 20%;
+}
+
+.bug {
+  background: #92BC2C;
+  box-shadow: 0 0 20px #92BC2C;
+}
+
+.dark {
+  background: #595761;
+  box-shadow: 0 0 20px #595761;
+}
+
+.dragon {
+  background: #0C69C8;
+  box-shadow: 0 0 20px #0C69C8;
+}
+
+.electric {
+  background: #d6c144;
+  box-shadow: 0 0 20px #d6c144;
+}
+
+.fire {
+  background: #da8731;
+  box-shadow: 0 0 20px #da8731;
+}
+
+.fairy {
+  background: #EE90E6;
+  box-shadow: 0 0 20px #EE90E6;
+}
+
+.fighting {
+  background: #D3425F;
+  box-shadow: 0 0 20px #D3425F;
+}
+
+.flying {
+  background: #9fbaed;
+  box-shadow: 0 0 20px #9fbaed;
+}
+
+.ghost {
+  background: #5F6DBC;
+  box-shadow: 0 0 20px #5F6DBC;
+}
+
+.grass {
+  background: #5FBD58;
+  box-shadow: 0 0 20px #5FBD58;
+}
+
+.ground {
+  background: #DA7C4D;
+  box-shadow: 0 0 20px #DA7C4D;
+}
+
+.ice {
+  background: #75D0C1;
+  box-shadow: 0 0 20px #75D0C1;
+}
+
+.normal {
+  background: #A0A29F;
+  box-shadow: 0 0 20px #A0A29F;
+}
+
+.poison {
+  background: #B763CF;
+  box-shadow: 0 0 20px #B763CF;
+}
+
+.psychic {
+  background: #FA8581;
+  box-shadow: 0 0 20px #FA8581;
+}
+
+.rock {
+  background: #C9BB8A;
+  box-shadow: 0 0 20px #C9BB8A;
+}
+
+.steel {
+  background: #5695A3;
+  box-shadow: 0 0 20px #5695A3;
+}
+
+.water {
+  background: #539DDF;
+  box-shadow: 0 0 20px #539DDF;
+}
+
+/* carregando */
+.carregando {
+  font-family: 'VT323', monospace;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carregando img {
+  width: 300px;
+}
+
+.carregando h1::after {
+  position: absolute;
+  animation: carregando 2s infinite;
+  content: '';
+}
+
+@keyframes carregando{
+  from {
+    content: '';
+  }
+  33% {
+    content: '.'
+  }
+  66% {
+    content: '..';
+  }
+  to {
+    content: '...';
+  }
+}

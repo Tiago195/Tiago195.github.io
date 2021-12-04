@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <title>Pokedex do Tiago</title>
+</head>
+<body>
+  <header>
+    <div>
+      <img src="imgs/Cubone.png" width="80px" alt="">
+      <img src="https://fontmeme.com/permalink/211201/2db890d72f9e277492182a0a14a3b728.png" alt="fonte-de-pokemon" >
+    </div>
+  </header>
+  <div class="carregando">
+    <h1>Carregando</h1>
+    <img src="imgs/carregando.gif" alt="">
+  </div>
+  <section class="input-container">
+    <section class="papi">
+      <section class="filter">
+        <select name="" id="geração">
+          <option value="false">Escolha a geração</option>
+          <option value="151-0">1° Primeira Geração</option>
+          <option value="251-151">2° Segunda Geração</option>
+          <option value="386-251">3° Terceira Geração</option>
+          <option value="493-386">4° Quarta Geração</option>
+          <option value="649-493">5° Quinta Geração</option>
+          <option value="721-649">6° Sexta Geração</option>
+          <option value="809-721">7° Sétima Geração</option>
+          <option value="890-809">8° Oitava Geração</option>
+        </select>
+        <select name="" id="tipo">
+          <option value="false">Escolha um tipo</option>
+          <option value="normal">normal</option>
+          <option value="fighting">fighting</option>
+          <option value="flying">flying</option>
+          <option value="poison">poison</option>
+          <option value="ground">ground</option>
+          <option value="rock">rock</option>
+          <option value="bug">bug</option>
+          <option value="ghost">ghost</option>
+          <option value="steel">steel</option>
+          <option value="fire">fire</option>
+          <option value="water">water</option>
+          <option value="grass">grass</option>
+          <option value="electric">electric</option>
+          <option value="psychic">psychic</option>
+          <option value="ice">ice</option>
+          <option value="dragon">dragon</option>
+          <option value="dark">dark</option>
+          <option value="fairy">fairy</option>
+        </select>
+      </section>
+      <section class="input">
+        <input type="text" id="text" placeholder="Digite o nome do seu Pokemon" >
+        <button id="btn">Procurar</button>
+      </section>
+    </section>
+  </section>
+  <section class="todos-pokemons">
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
