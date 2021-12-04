@@ -20,6 +20,9 @@ document.querySelector('.carta').addEventListener('click', () => {
   window.open('./projetos/carta');
 });
 
+document.querySelector('.pokemon').addEventListener('click', () => {
+  window.open('./projetos/pokemon')
+})
 
 label.addEventListener('click', (e) => {
   if (e.target.tagName === 'LABEL') {

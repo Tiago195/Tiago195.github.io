@@ -167,6 +167,13 @@ i {
   cursor: pointer;
 }
 
+.pokemon {
+  background: url(./imgs/pokemon.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
 .teste {
   display: inline-block;
   position: relative;
@@ -196,8 +203,11 @@ i {
   color: white;
   position: absolute;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  /* transform: translateX(-50%); */
+  width: fit-content;
+  margin: 0 auto;
   background-color: none;
   padding: 5px;
   border-radius: 5px;
