@@ -4,14 +4,56 @@ const inputUsuario = document.querySelector('#text')
 const tipo = document.querySelector('#tipo')
 const btn = document.querySelector('#btn')
 const carregando = document.querySelector('.carregando')
-const myList = []
 
 async function todosPokemon() {
   const url = `https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0`
-  const data = await (await fetch(url)).json()
-  for (let i of data.results) {
-    myList.push(await (await (fetch(i.url))).json())
-  }
+  return await (await fetch(url)).json()
+}
+
+const filtros = {
+  async geracaoTipo(e, geracao, tipo) {
+    for (let i of e) {
+      const data = await (await fetch(i.url)).json()
+      if ((data.id > geracao[1] && data.id <= geracao[0]) && data.types.some(e => e.type.name === tipo))
+        append(data)
+    }
+  },
+  async nomes(e, nome) {
+    for (let i of e) {
+      if (i.name.includes(nome)) {
+        const data = await (await fetch(i.url)).json()
+        append(data)
+      }
+    }
+  },
+  async geracao(e, comparador) {
+    for (let i of e) {
+      const data = await (await fetch(i.url)).json()
+      if (data.id > comparador[1] && data.id <= comparador[0]) {
+        append(data)
+      }
+    }
+  },
+  async geracaoFiltrada(e) {
+    for (let i of e) {
+      const data = await (await (fetch(i.url))).json()
+      append(data)
+    }
+  },
+  async tipo(e, comparador) {
+    for (let i of e) {
+      const data = await (await fetch(i.url)).json()
+      if (data.types.some(f => f.type.name === comparador)) {
+        append(data)
+      }
+    }
+  },
+  async tipoFiltrado(e) {
+    for (let i of e) {
+      const data = await (await (fetch(i.pokemon.url))).json()
+      append(data)
+    }
+  },
 }
 
 const colors = {
@@ -144,60 +186,55 @@ function append(parametro) {
   pokemons.appendChild(paiDetodasDivs)
 }
 
-async function teste({ nome, tipo, geracao }) {
-  // console.log(await data)
-  const tutu = geracao.split('-')
-  if (nome === '' && tipo === 'false' && geracao === 'false') {
-    for (let i of myList) {
-      append(i)
-    }
+async function separaUrls(array) {
+  const tutu = []
+  for (let i of array) {
+    const data = await (await (fetch(i.url))).json()
+    tutu.push(data)
   }
-  if (nome !== '') {
-    if (tipo !== 'false') {
-      const teste = geracao === 'false'
-        ? myList.filter((f) => f.name.startsWith(nome.toLowerCase()))
-          .filter((f) => f.types.some(e => e.type.name === tipo))
-        : myList.filter((f) => f.id > tutu[1] && f.id < tutu[0])
-          .filter((f) => f.types.some(e => e.type.name === tipo))
-          .filter((f) => f.name.startsWith(nome.toLowerCase()))
-      for (let i of teste) {
-        append(i)
-      }
-    } else if (geracao !== 'false') {
-      const teste = myList.filter((f) => f.id > tutu[1] && f.id < tutu[0])
-        .filter((f) => f.name.startsWith(nome.toLowerCase()))
-      for (let i of teste) {
-        append(i)
-      }
-    }
-    else {
-      const teste = myList.filter((f) => f.name.startsWith(nome.toLowerCase()))
-      for (let i of teste) {
-        append(i)
-      }
-    }
-  } else {
-    if (tipo !== 'false') {
-      const teste = geracao === 'false'
-        ? myList.filter((f) => f.types.some(e => e.type.name === tipo))
-        : myList.filter((f) => f.id > tutu[1] && f.id < tutu[0])
-          .filter((f) => f.types.some(e => e.type.name === tipo))
-      for (let i of teste) {
-        append(i)
-      }
+  return tutu
+}
+
+async function teste({ nome, tipo, geracao }) {
+  const data = (await todosPokemon()).results
+  const arGeracao = geracao.split('-')
+  const arTipo = tipo.split('-')
+
+  if (nome && tipo && geracao) {
+    const urls = data.filter(f => f.name.includes(nome))
+    filtros.geracaoTipo(urls, arGeracao, arTipo[0])
+  } else if (nome) {
+    if (geracao || tipo) {
+      const urls = data.filter(f => f.name.includes(nome))
+      geracao ? filtros.geracao(urls, arGeracao)
+        : filtros.tipo(urls, arTipo[0])
     } else {
-      const teste = myList.filter((f) => f.id > tutu[1] && f.id <= tutu[0])
-      for (let i of teste) {
-        append(i)
-      }
+      filtros.nomes(data, nome)
     }
+  } else if (geracao || tipo) {
+    if (geracao && tipo) {
+      const url = `https://pokeapi.co/api/v2/pokemon?limit=${arGeracao[2]}&offset=${arGeracao[3]}`
+      const data = (await (await fetch(url)).json()).results
+      filtros.geracaoTipo(data, arGeracao, arTipo[0])
+    } else if (geracao) {
+      const url = `https://pokeapi.co/api/v2/pokemon?limit=${arGeracao[2]}&offset=${arGeracao[3]}`
+      const data = (await (await fetch(url)).json()).results
+      filtros.geracaoFiltrada(data)
+    } else {
+      const url = `https://pokeapi.co/api/v2/type/${arTipo[1]}`
+      const data = (await (await fetch(url)).json()).pokemon
+      filtros.tipoFiltrado(data)
+    }
+
+  } else {
+    filtros.geracaoFiltrada(data)
   }
 }
 
 function procurar() {
   pokemons.innerHTML = ''
-  const filtro = { nome: inputUsuario.value, tipo: tipo.value, geracao: geracao.value }
-  teste(filtro)
+  const valores = { nome: inputUsuario.value, tipo: tipo.value, geracao: geracao.value }
+  teste(valores)
   inputUsuario.value = ''
 }
 
@@ -208,10 +245,3 @@ inputUsuario.addEventListener('keyup', (e) => {
     procurar()
   }
 })
-
-window.onload = async () => {
-  await todosPokemon()
-  if (myList.length >= 1100) {
-    carregando.remove()
-  }
-}
