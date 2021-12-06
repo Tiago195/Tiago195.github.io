@@ -1,125 +1,9 @@
-const geracao = document.querySelector('#geração')
 const pokemons = document.querySelector('.todos-pokemons')
-const inputUsuario = document.querySelector('#text')
-const tipo = document.querySelector('#tipo')
-const btn = document.querySelector('#btn')
-const carregando = document.querySelector('.carregando')
+const inputMnenu = document.querySelector('.input-container')
 
 async function todosPokemon() {
   const url = `https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0`
   return await (await fetch(url)).json()
-}
-
-const filtros = {
-  async geracaoTipo(e, geracao, tipo) {
-    for (let i of e) {
-      const data = await (await fetch(i.url)).json()
-      if ((data.id > geracao[1] && data.id <= geracao[0]) && data.types.some(e => e.type.name === tipo))
-        append(data)
-    }
-  },
-  async nomes(e, nome) {
-    for (let i of e) {
-      if (i.name.includes(nome)) {
-        const data = await (await fetch(i.url)).json()
-        append(data)
-      }
-    }
-  },
-  async geracao(e, comparador) {
-    for (let i of e) {
-      const data = await (await fetch(i.url)).json()
-      if (data.id > comparador[1] && data.id <= comparador[0]) {
-        append(data)
-      }
-    }
-  },
-  async geracaoFiltrada(e) {
-    for (let i of e) {
-      const data = await (await (fetch(i.url))).json()
-      append(data)
-    }
-  },
-  async tipo(e, comparador) {
-    for (let i of e) {
-      const data = await (await fetch(i.url)).json()
-      if (data.types.some(f => f.type.name === comparador)) {
-        append(data)
-      }
-    }
-  },
-  async tipoFiltrado(e) {
-    for (let i of e) {
-      const data = await (await (fetch(i.pokemon.url))).json()
-      append(data)
-    }
-  },
-}
-
-const colors = {
-  normal: '#c6c6a7',
-  fire: '#f5ac78',
-  water: '#9db7f5',
-  electric: '#fae078',
-  grass: '#a7db8d',
-  ice: '#bce6e6',
-  fighting: '#d67873',
-  poison: '#c183c1',
-  ground: '#ebd69d',
-  flying: '#c6b7f5',
-  psychic: '#fa92b2',
-  bug: '#c6d16e',
-  rock: '#d1c17d',
-  ghost: '#a292bc',
-  dragon: '#a27dfa',
-  dark: '#a19288',
-  steel: '#d1d1e0',
-  fairy: '#f4bdc9',
-  unknown: '#9dc1b7',
-}
-
-const icons = {
-  normal: 'icons/normal.svg',
-  fire: 'icons/fire.svg',
-  water: 'icons/water.svg',
-  electric: 'icons/electric.svg',
-  grass: 'icons/grass.svg',
-  ice: 'icons/ice.svg',
-  fighting: 'icons/fighting.svg',
-  poison: 'icons/poison.svg',
-  ground: 'icons/ground.svg',
-  flying: 'icons/flying.svg',
-  psychic: 'icons/psychic.svg',
-  bug: 'icons/bug.svg',
-  rock: 'icons/rock.svg',
-  ghost: 'icons/ghost.svg',
-  dragon: 'icons/dragon.svg',
-  dark: 'icons/dark.svg',
-  steel: 'icons/steel.svg',
-  fairy: 'icons/fairy.svg',
-  unknown: 'icons/unknown.svg',
-}
-
-const classPokemons = {
-  normal: 'normal',
-  fire: 'fire',
-  water: 'water',
-  electric: 'electric',
-  grass: 'grass',
-  ice: 'ice',
-  fighting: 'fighting',
-  poison: 'poison',
-  ground: 'ground',
-  flying: 'flying',
-  psychic: 'psychic',
-  bug: 'bug',
-  rock: 'rock',
-  ghost: 'ghost',
-  dragon: 'dragon',
-  dark: 'dark',
-  steel: 'steel',
-  fairy: 'fairy',
-  unknown: 'unknown',
 }
 
 function criaElemento(tag, tipoDeValue, value, className) {
@@ -149,8 +33,7 @@ function tipagem(parametro, paiDetodasDivs, tipo1, teste) {
     tipo1.classList.add(classPokemons[parametro.types[0].type.name])
     tipo1.appendChild(imgFilho)
   } else {
-    const  // const teste = geracao.split('-')
-      tipo2 = document.createElement('div')
+    const tipo2 = document.createElement('div')
     tipo2.className = 'icon'
     const imgFilho = criaElemento('img', 'src', icons[parametro.types[0].type.name])
     const imgFilho1 = criaElemento('img', 'src', icons[parametro.types[1].type.name])
@@ -186,26 +69,17 @@ function append(parametro) {
   pokemons.appendChild(paiDetodasDivs)
 }
 
-async function separaUrls(array) {
-  const tutu = []
-  for (let i of array) {
-    const data = await (await (fetch(i.url))).json()
-    tutu.push(data)
-  }
-  return tutu
-}
-
 async function teste({ nome, tipo, geracao }) {
   const data = (await todosPokemon()).results
   const arGeracao = geracao.split('-')
   const arTipo = tipo.split('-')
 
   if (nome && tipo && geracao) {
-    const urls = data.filter(f => f.name.includes(nome))
+    const urls = data.filter(f => f.name.includes(nome.toLowerCase()))
     filtros.geracaoTipo(urls, arGeracao, arTipo[0])
   } else if (nome) {
     if (geracao || tipo) {
-      const urls = data.filter(f => f.name.includes(nome))
+      const urls = data.filter(f => f.name.includes(nome.toLowerCase()))
       geracao ? filtros.geracao(urls, arGeracao)
         : filtros.tipo(urls, arTipo[0])
     } else {
@@ -233,15 +107,16 @@ async function teste({ nome, tipo, geracao }) {
 
 function procurar() {
   pokemons.innerHTML = ''
-  const valores = { nome: inputUsuario.value, tipo: tipo.value, geracao: geracao.value }
-  teste(valores)
-  inputUsuario.value = ''
+  const valores = { nome: inputText.value, tipo: '', geracao: '' }
+  for (let i of inputMnenu.children[0].children) {
+    if (i.checked)
+      valores.geracao = i.value
+  }
+  for (let i of inputMnenu.children[1].children) {
+    if (i.checked)
+      valores.tipo = i.value
+  }
+  return valores
 }
 
-btn.addEventListener('click', procurar)
-
-inputUsuario.addEventListener('keyup', (e) => {
-  if (e.key === 'Enter') {
-    procurar()
-  }
-})
+window.onload = teste(JSON.parse(localStorage.getItem('busca')));

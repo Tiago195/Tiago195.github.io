@@ -1,0 +1,228 @@
+
+header div {
+  display: flex;
+}
+header div img:nth-child(1) {
+  width: 60px;
+  height: 60px;
+}
+
+header div img:nth-child(2) {
+  height: 60px;
+}
+
+.header-filter {
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  width: 300px;
+}
+
+.geracao {
+  border-radius: 10px;
+  width: 220px;
+  height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkbox {
+  display: none;
+}
+
+.label-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  font-size: 40px;
+  font-family: 'VT323', monospace;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.geracao-active {
+  background-color: #fa92b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  color: black;
+  font-size: 40px;
+  font-family: 'VT323', monospace;
+}
+
+.tipos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  width: 220px;
+  height: 120px;
+}
+
+.tipo-checkbox {
+  display: none;
+}
+
+#text {
+  width: 220px;
+  height: 30px;
+}
+
+#btn {
+  padding: 10px 20px; 
+  width: 220px;
+  background-color: #009d68;
+  border: none;
+  border-radius: 5px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  display: flex;
+  gap: 10px;
+}
+
+
+.bug-menu {
+  background: #92BC2C;
+  background-image: url('/icons/bug.svg');
+}
+
+.dark-menu {
+  background: #595761;
+  background-image: url('/icons/dark.svg');
+}
+
+.dragon-menu {
+  background: #0C69C8;
+  background-image: url('/icons/dragon.svg');
+}
+
+.electric-menu {
+  background: #d6c144;
+  background-image: url('/icons/electric.svg');
+}
+
+.fire-menu {
+  background: #da8731;
+  background-image: url('/icons/fire.svg');
+}
+
+.fairy-menu {
+  background: #EE90E6;
+  background-image: url('/icons/fairy.svg');
+}
+
+.fighting-menu {
+  background: #D3425F;
+  background-image: url('/icons/fighting.svg');
+}
+
+.flying-menu {
+  background: #9fbaed;
+  background-image: url('/icons/flying.svg');
+}
+
+.ghost-menu {
+  background: #5F6DBC;
+  background-image: url('/icons/ghost.svg');
+}
+
+.grass-menu {
+  background: #5FBD58;
+  background-image: url('/icons/grass.svg');
+}
+
+.ground-menu {
+  background: #DA7C4D;
+  background-image: url('/icons/ground.svg');
+}
+
+.ice-menu {
+  background: #75D0C1;
+  background-image: url('/icons/ice.svg');
+}
+
+.normal-menu {
+  background: #A0A29F;
+  background-image: url('/icons/normal.svg');
+}
+
+.poison-menu {
+  background: #B763CF;
+  background-image: url('/icons/poison.svg');
+}
+
+.psychic-menu {
+  background: #FA8581;
+  background-image: url('/icons/psychic.svg');
+}
+
+.rock-menu {
+  background: #C9BB8A;
+  background-image: url('/icons/rock.svg');
+}
+
+.steel-menu {
+  background: #5695A3;
+  background-image: url('/icons/steel.svg');
+}
+
+.water-menu {
+  background: #539DDF;
+  background-image: url('/icons/water.svg');
+}
+
+.tipo {
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  filter: invert(20%);
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tipo-active {
+  filter: invert(0);
+}
+
+.tipo-active::after {
+  position: absolute;
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #00ff15;
+  margin-left: 50%;
+  content: '';
+  animation: triangulo .5s alternate infinite ease-in
+}
+
+@keyframes triangulo {
+  to {
+    transform: translate(-50%,-5px);
+  }
+  from {
+    transform: translate(-50%,-10px);
+  }
+}
