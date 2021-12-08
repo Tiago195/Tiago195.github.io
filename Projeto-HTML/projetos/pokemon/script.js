@@ -108,15 +108,17 @@ async function teste({ nome, tipo, geracao }) {
 function procurar() {
   pokemons.innerHTML = ''
   const valores = { nome: inputText.value, tipo: '', geracao: '' }
-  for (let i of inputMnenu.children[0].children) {
+  for (let i of inputMnenu.children[0].children[1].children) {
     if (i.checked)
       valores.geracao = i.value
   }
-  for (let i of inputMnenu.children[1].children) {
+  for (let i of inputMnenu.children[1].children[1].children) {
     if (i.checked)
       valores.tipo = i.value
   }
   return valores
 }
 
-window.onload = teste(JSON.parse(localStorage.getItem('busca')));
+window.onload = localStorage.getItem('busca')
+  ? teste(JSON.parse(localStorage.getItem('busca')))
+  : teste({ nome: '', tipo: '', geracao: '151-0-151-0' });

@@ -34,8 +34,6 @@ tipos.addEventListener('click', (e) => {
 btn.addEventListener('mousedown', (e) => {
   localStorage.setItem('busca', JSON.stringify(procurar()))
   location.reload()
-  e.target.style.backgroundColor = '#027b52'
-  procurar()
 })
 
 btn.addEventListener('mouseup', (e) => {
@@ -46,6 +44,6 @@ inputText.addEventListener('keyup', (e) => {
   if (e.key === 'Enter') {
     localStorage.setItem('busca', JSON.stringify(procurar()))
     location.reload()
-    procurar()
+
   }
 })
